@@ -220,9 +220,9 @@
 			<dd><a href="{% url 'djangobb:open_close_topic' topic.id 'c' %}">{% trans "Close topic" %}</a></dd>
 		{% endif %}
 		{% if topic.sticky %}
-			<dd><a href="{% url 'djangobb:stick_unstick_topic' topic.id 'u' %}">{% trans "Unstick topic" %}</a></dd></dl>
+			<dd><a href="{% url 'djangobb:stick_unstick_topic' topic.id 'u' %}">{% trans "Unstick topic" %}</a></dd>
 		{% else %}
-			<dd><a href="{% url 'djangobb:stick_unstick_topic' topic.id 's' %}">{% trans "Stick topic" %}</a></dd></dl>
+			<dd><a href="{% url 'djangobb:stick_unstick_topic' topic.id 's' %}">{% trans "Stick topic" %}</a></dd>
 		{% endif %}
 	{% endif %}
     </dl>

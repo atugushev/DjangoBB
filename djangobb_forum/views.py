@@ -707,6 +707,8 @@ def move_topic(request):
         to_forum = get_object_or_404(Forum, pk=to_forum_id)
         for topic_id in topic_ids:
             topic = get_object_or_404(Topic, pk=topic_id)
+            if not topic.forum.category.has_access(request.user):
+                raise PermissionDenied
             if topic.forum != to_forum:
                 if forum_moderated_by(topic, request.user):
                     topic.forum = to_forum

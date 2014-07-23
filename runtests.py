@@ -10,6 +10,7 @@ from django.conf import settings, global_settings
 # haven't been provided settings to use by environment variable.
 if not settings.configured and not os.environ.get('DJANGO_SETTINGS_MODULE'):
     settings.configure(
+        USE_TZ=True,
         DATABASES={
             'default': {
                 'ENGINE': 'django.db.backends.sqlite3',
@@ -40,6 +41,7 @@ if not settings.configured and not os.environ.get('DJANGO_SETTINGS_MODULE'):
         ),
         TEMPLATE_CONTEXT_PROCESSORS=global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
             'djangobb_forum.context_processors.forum_settings',
+            'django.core.context_processors.request',
         ),
         PASSWORD_HASHERS=('django.contrib.auth.hashers.SHA1PasswordHasher',),
         ROOT_URLCONF='djangobb_forum.tests.urls',

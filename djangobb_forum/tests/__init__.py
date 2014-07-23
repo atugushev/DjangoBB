@@ -1,3 +1,4 @@
+from .test_category import *
 from .test_forum import *
 from .test_reputation import *
 from .test_profile import *
